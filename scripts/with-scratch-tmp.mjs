@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 
-const DEFAULT_SCRATCH_BASE =
-  '/home/antigravity/.gemini/jetski/scratch/teamwork_tmp';
+const DEFAULT_SCRATCH_BASE = process.env.RUNNER_TEMP
+  ? path.join(process.env.RUNNER_TEMP, 'app-icol-scratch')
+  : path.join(os.homedir(), '.gemini/jetski/scratch/teamwork_tmp');
 
 const args = process.argv.slice(2);
 if (args.length === 0) {
@@ -30,6 +32,12 @@ function cleanup() {
 
 process.on('exit', cleanup);
 
+const defaultPlaywrightPath = fs.existsSync('/opt/ms-playwright')
+  ? '/opt/ms-playwright'
+  : undefined;
+const resolvedPlaywrightPath =
+  process.env.PLAYWRIGHT_BROWSERS_PATH || defaultPlaywrightPath;
+
 const [command, ...commandArgs] = args;
 const child = spawn(command, commandArgs, {
   stdio: 'inherit',
@@ -38,8 +46,9 @@ const child = spawn(command, commandArgs, {
     TMPDIR: runTmpDir,
     TMP: runTmpDir,
     TEMP: runTmpDir,
-    PLAYWRIGHT_BROWSERS_PATH:
-      process.env.PLAYWRIGHT_BROWSERS_PATH || '/opt/ms-playwright',
+    ...(resolvedPlaywrightPath
+      ? { PLAYWRIGHT_BROWSERS_PATH: resolvedPlaywrightPath }
+      : {}),
   },
 });
 

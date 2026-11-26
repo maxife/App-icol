@@ -79,4 +79,12 @@ Commande de build et dossier de sortie à configurer sur l'hébergeur :
 - **Build command** : `npm ci && npm run build`
 - **Publish / Output directory** : `packages/web/dist`
 
-*(Grâce à `base: './'` et au routeur par hash `#/dashboard`, l'application fonctionne aussi bien à la racine d'un domaine Vercel/Netlify que dans un sous-dossier GitHub Pages `https://<user>.github.io/app-icol/`, et s'installe hors-ligne sur l'écran d'accueil iOS / Android).*
+### 4.1 Déploiement automatique via GitHub Pages (`.github/workflows/deploy.yml`)
+
+Le dépôt inclut déjà le workflow GitHub Actions **CI & Deploy App-icol PWA** (`.github/workflows/deploy.yml`) :
+
+1. **Visibilité du dépôt** : sur un compte **GitHub Free**, GitHub Pages nécessite que le dépôt soit **Public** (*Settings -> General -> Danger Zone -> Change repository visibility -> Make public*), ou un abonnement GitHub Pro pour un dépôt privé *(à noter : le code source ne contient aucun secret ni donnée client — les vraies données restent dans votre Google Sheet privé, protégé côté Apps Script par `GOOGLE_CLIENT_ID` et `MANAGER_EMAILS` / `CONTRIBUTOR_EMAILS`)*. Si vous préférez conserver le dépôt privé gratuitement, connectez-le simplement à **Cloudflare Pages**, **Vercel** ou **Netlify**.
+2. **Activation de GitHub Pages** : dans **Settings -> Pages -> Build and deployment -> Source**, sélectionnez **GitHub Actions**.
+3. **Variables optionnelles (liaison Google Sheets)** : dans **Settings -> Secrets and variables -> Actions -> Variables**, ajoutez `VITE_DATA_MODE`, `VITE_AUTH_MODE`, `VITE_GAS_WEBAPP_URL` et `VITE_GOOGLE_CLIENT_ID` (sans ces variables, l'application déployée tourne de façon autonome en mode démonstration `localStorage`).
+
+*(Grâce à `base: './'`, `.nojekyll` et au routeur par hash `#/dashboard`, l'application fonctionne aussi bien à la racine d'un domaine Vercel/Netlify que dans un sous-dossier GitHub Pages `https://<user>.github.io/App-icol/`, et s'installe hors-ligne sur l'écran d'accueil iOS / Android).*

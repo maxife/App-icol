@@ -2,11 +2,13 @@
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const DEFAULT_SCRATCH_BASE =
-  '/home/antigravity/.gemini/jetski/scratch/teamwork_tmp';
+const DEFAULT_SCRATCH_BASE = process.env.RUNNER_TEMP
+  ? path.join(process.env.RUNNER_TEMP, 'app-icol-scratch')
+  : path.join(os.homedir(), '.gemini/jetski/scratch/teamwork_tmp');
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 function allocateFreeLocalPort() {
@@ -54,6 +56,12 @@ try {
     : await allocateFreeLocalPort();
   const e2eBaseUrl = process.env.E2E_BASE_URL || `http://127.0.0.1:${e2ePort}`;
 
+  const defaultPlaywrightPath = fs.existsSync('/opt/ms-playwright')
+    ? '/opt/ms-playwright'
+    : undefined;
+  const resolvedPlaywrightPath =
+    process.env.PLAYWRIGHT_BROWSERS_PATH || defaultPlaywrightPath;
+
   const childEnv = {
     ...process.env,
     TMPDIR: runTmpDir,
@@ -61,8 +69,9 @@ try {
     TEMP: runTmpDir,
     E2E_PORT: String(e2ePort),
     E2E_BASE_URL: e2eBaseUrl,
-    PLAYWRIGHT_BROWSERS_PATH:
-      process.env.PLAYWRIGHT_BROWSERS_PATH || '/opt/ms-playwright',
+    ...(resolvedPlaywrightPath
+      ? { PLAYWRIGHT_BROWSERS_PATH: resolvedPlaywrightPath }
+      : {}),
   };
 
   const webDistIndex = path.join(rootDir, 'packages/web/dist/index.html');

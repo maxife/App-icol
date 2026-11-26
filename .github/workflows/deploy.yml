@@ -32,8 +32,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Typecheck workspaces
-        run: npm run typecheck
+      - name: Typecheck workspaces & E2E suite
+        run: |
+          npm run typecheck
+          npx tsc -p e2e/tsconfig.json --noEmit
 
       - name: Run unit & component tests (Vitest)
         run: npm test
@@ -45,9 +47,6 @@ jobs:
           VITE_GAS_WEBAPP_URL: ${{ vars.VITE_GAS_WEBAPP_URL || '' }}
           VITE_GOOGLE_CLIENT_ID: ${{ vars.VITE_GOOGLE_CLIENT_ID || '' }}
         run: npm run build
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
 
       - name: Upload PWA artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
@@ -62,6 +61,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Configure GitHub Pages
+        id: configure
+        continue-on-error: true
+        uses: actions/configure-pages@v5
+
       - name: Deploy to GitHub Pages
         id: deployment
+        if: steps.configure.outcome == 'success'
         uses: actions/deploy-pages@v4

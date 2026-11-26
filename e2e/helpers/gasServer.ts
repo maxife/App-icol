@@ -3,10 +3,19 @@ import { spawn, type ChildProcess } from 'node:child_process';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import net from 'node:net';
+import os from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-export const REPO_ROOT = '/home/antigravity';
-export const SCRATCH_TMP_ROOT = '/home/antigravity/.gemini/jetski/scratch/teamwork_tmp';
+export const REPO_ROOT = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '../..',
+);
+export const SCRATCH_TMP_ROOT =
+  process.env.APP_ICOL_SCRATCH_ROOT ||
+  (process.env.RUNNER_TEMP
+    ? path.join(process.env.RUNNER_TEMP, 'app-icol-scratch')
+    : path.join(os.homedir(), '.gemini/jetski/scratch/teamwork_tmp'));
 export const GAS_LOCAL_SERVER_SCRIPT = path.join(
   REPO_ROOT,
   'packages/gas-api/scripts/serve-local-gas.mjs',

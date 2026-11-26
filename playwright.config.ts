@@ -1,8 +1,10 @@
+import os from 'node:os';
 import path from 'node:path';
 import { defineConfig } from '@playwright/test';
 
-const DEFAULT_SCRATCH_BASE =
-  '/home/antigravity/.gemini/jetski/scratch/teamwork_tmp';
+const DEFAULT_SCRATCH_BASE = process.env.RUNNER_TEMP
+  ? path.join(process.env.RUNNER_TEMP, 'app-icol-scratch')
+  : path.join(os.homedir(), '.gemini/jetski/scratch/teamwork_tmp');
 
 const rawTmpDir = process.env.TMPDIR;
 const safeTmpBase =
