@@ -1,126 +1,141 @@
 :root {
-  /* === Palette: Ambre Solaire & Ardoise Chaude === */
-  --bg-canvas: #faf6ee;
+  /* === Palette: Maison Apicole Contemporaine (Ambre Doré, Cire Douce & Ardoise Chaude) === */
+  --bg-canvas: #fbf8f2;
   --bg-surface: #ffffff;
-  --bg-surface-subtle: #f3ede0;
-  --bg-surface-elevated: #fffdf9;
-  --bg-scrim: rgb(28 25 23 / 0.52);
+  --bg-surface-subtle: #f5efe4;
+  --bg-surface-elevated: #fffefb;
+  --bg-glass: rgb(255 253 248 / 0.86);
+  --bg-scrim: rgb(32 24 16 / 0.44);
 
-  --ink-primary: #1c1917;
-  --ink-secondary: #44403c;
-  --ink-muted: #57534e;
-  --ink-inverse: #fafaf9;
+  --ink-primary: #221b14;
+  --ink-secondary: #574c41;
+  --ink-muted: #7c6f62;
+  --ink-inverse: #fffdf9;
 
-  --border-subtle: #d6cfc2;
-  --border-strong: #a8a096;
-  --border-input: #78716c;
-  --focus-ring: #b45309;
-  --focus-ring-offset: #faf6ee;
+  /* Hairline warm-linen borders instead of heavy grey outlines */
+  --border-subtle: rgb(118 93 63 / 0.13);
+  --border-strong: rgb(118 93 63 / 0.22);
+  --border-input: rgb(118 93 63 / 0.24);
+  --focus-ring: #d97706;
+  --focus-ring-halo: rgb(217 119 6 / 0.18);
+  --focus-ring-offset: #fbf8f2;
 
-  /* Solar Honey Primary Accent (High-contrast dark slate ink on warm amber) */
-  --accent-honey: #f59e0b;
-  --accent-honey-hover: #fbbf24;
-  --accent-honey-active: #d97706;
-  --accent-honey-soft: #fef3c7;
-  --accent-honey-border: #d97706;
-  --accent-honey-ink: #92400e;
-  --ink-on-honey: #1c1917;
+  /* Sculpted Artisanal Honey Primary Accent */
+  --accent-honey: #df8207;
+  --accent-honey-hover: #c97104;
+  --accent-honey-active: #b45f04;
+  --accent-honey-gradient: linear-gradient(180deg, #f39c1b 0%, #d97706 100%);
+  --accent-honey-gradient-hover: linear-gradient(180deg, #f7ab34 0%, #c86a04 100%);
+  --accent-honey-soft: #fef5e3;
+  --accent-honey-border: rgb(217 119 6 / 0.36);
+  --accent-honey-ink: #924608;
+  --ink-on-honey: #fffdf9;
 
-  /* Feedback & Action Tones */
-  --tone-danger: #b91c1c;
-  --tone-danger-hover: #991b1b;
-  --tone-danger-soft: #fee2e2;
-  --tone-success: #15803d;
-  --tone-success-hover: #166534;
-  --tone-success-soft: #dcfce7;
-  --tone-info: #0369a1;
-  --tone-info-soft: #e0f2fe;
+  /* Refined Botanical & Terroir Feedback Tones */
+  --tone-danger: #c23028;
+  --tone-danger-hover: #a3241d;
+  --tone-danger-soft: #fdf2f1;
+  --tone-success: #1d7a4c;
+  --tone-success-hover: #16623c;
+  --tone-success-soft: #eef8f2;
+  --tone-info: #1d6496;
+  --tone-info-soft: #eff6fc;
 
-  /* === 7 Semantic Domain Statuses === */
+  /* === 7 Semantic Domain Statuses (Soft Tints & Refined Borders) === */
   /* OrderStatus: Réservé */
-  --status-reserved-bg: #fef3c7;
-  --status-reserved-fg: #92400e;
-  --status-reserved-border: #d97706;
+  --status-reserved-bg: #fef4df;
+  --status-reserved-fg: #944908;
+  --status-reserved-border: rgb(217 119 6 / 0.32);
 
   /* OrderStatus: Distribué */
-  --status-distributed-bg: #dcfce7;
-  --status-distributed-fg: #166534;
-  --status-distributed-border: #16a34a;
+  --status-distributed-bg: #eaf6ef;
+  --status-distributed-fg: #18633d;
+  --status-distributed-border: rgb(29 122 76 / 0.28);
 
   /* PaymentStatus: Non-payé */
-  --status-unpaid-bg: #fee2e2;
-  --status-unpaid-fg: #991b1b;
-  --status-unpaid-border: #dc2626;
+  --status-unpaid-bg: #fdeeed;
+  --status-unpaid-fg: #a1261f;
+  --status-unpaid-border: rgb(194 48 40 / 0.28);
 
   /* PaymentStatus: Payé */
-  --status-paid-bg: #d1fae5;
-  --status-paid-fg: #065f46;
-  --status-paid-border: #059669;
+  --status-paid-bg: #e7f6ee;
+  --status-paid-fg: #135d38;
+  --status-paid-border: rgb(21 128 61 / 0.28);
 
   /* PaymentStatus: Donné (0 € hors CA) */
-  --status-donated-bg: #e0f2fe;
-  --status-donated-fg: #075985;
-  --status-donated-border: #0284c7;
+  --status-donated-bg: #edf5fc;
+  --status-donated-fg: #185582;
+  --status-donated-border: rgb(29 100 150 / 0.28);
 
   /* TransferStatus: À reverser */
-  --status-to-transfer-bg: #ffedd5;
-  --status-to-transfer-fg: #9a3412;
-  --status-to-transfer-border: #ea580c;
+  --status-to-transfer-bg: #fff1e4;
+  --status-to-transfer-fg: #9a3a10;
+  --status-to-transfer-border: rgb(234 88 12 / 0.3);
 
   /* TransferStatus: Reversé */
-  --status-transferred-bg: #e7e5e4;
-  --status-transferred-fg: #292524;
-  --status-transferred-border: #78716c;
+  --status-transferred-bg: #f1ede7;
+  --status-transferred-fg: #443b33;
+  --status-transferred-border: rgb(120 105 90 / 0.26);
 
   /* Neutral / Forecast Badge */
-  --status-neutral-bg: #f3ede0;
-  --status-neutral-fg: #44403c;
-  --status-neutral-border: #a8a096;
+  --status-neutral-bg: #f4efe5;
+  --status-neutral-fg: #54483c;
+  --status-neutral-border: rgb(118 93 63 / 0.22);
 
   /* === Typography & Tabular Numerals === */
+  --font-display: 'Lora', Georgia, 'Times New Roman', serif;
   --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, sans-serif;
   --font-numeric-feature: 'tnum' 1, 'lnum' 1;
 
-  --text-xs: 0.8125rem; /* 13px */
+  --text-xs: 0.78125rem; /* 12.5px */
   --text-sm: 0.875rem; /* 14px */
   --text-base: 1rem; /* 16px — mandatory min on inputs to avoid iOS zoom */
-  --text-lg: clamp(1.0625rem, 0.98rem + 0.35vw, 1.2rem);
+  --text-lg: clamp(1.0625rem, 0.98rem + 0.35vw, 1.1875rem);
   --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-  --text-2xl: clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);
-  --text-kpi: clamp(1.45rem, 1.25rem + 1vw, 2rem);
+  --text-2xl: clamp(1.5rem, 1.32rem + 0.85vw, 1.95rem);
+  --text-kpi: clamp(1.5rem, 1.3rem + 0.95vw, 2.05rem);
 
-  --leading-tight: 1.2;
-  --leading-snug: 1.35;
-  --leading-normal: 1.5;
+  --leading-tight: 1.16;
+  --leading-snug: 1.36;
+  --leading-normal: 1.52;
 
   /* === Tactile Touch Targets & Spacing === */
   --touch-target-min: 48px;
   --stepper-btn-size: 52px;
 
-  --space-1: 0.25rem; /* 4px */
-  --space-2: 0.5rem; /* 8px */
-  --space-3: 0.75rem; /* 12px */
-  --space-4: 1rem; /* 16px */
-  --space-5: 1.25rem; /* 20px */
-  --space-6: 1.5rem; /* 24px */
-  --space-8: 2rem; /* 32px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
 
-  /* === Radii & Tactile Elevation === */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  /* === Radii & Warm Ambient Elevation === */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
   --radius-pill: 9999px;
 
-  --shadow-card: 0 1px 2px rgb(28 25 23 / 0.06), 0 2px 6px rgb(28 25 23 / 0.04);
-  --shadow-elevated: 0 4px 14px rgb(28 25 23 / 0.12), 0 1px 3px rgb(28 25 23 / 0.08);
-  --shadow-bottom-bar: 0 -2px 12px rgb(28 25 23 / 0.08);
+  --shadow-card:
+    0 1px 2px rgb(38 26 12 / 0.035),
+    0 8px 24px -8px rgb(38 26 12 / 0.065);
+  --shadow-elevated:
+    0 14px 34px -10px rgb(38 26 12 / 0.14),
+    0 3px 10px -2px rgb(38 26 12 / 0.06);
+  --shadow-honey:
+    inset 0 1px 0 rgb(255 255 255 / 0.36),
+    0 4px 14px -2px rgb(217 119 6 / 0.34);
+  --shadow-bottom-bar:
+    0 -4px 24px -4px rgb(38 26 12 / 0.08),
+    0 -1px 0 rgb(118 93 63 / 0.1);
 
   /* === Responsive Shell Layout Variables === */
-  --mobile-bottom-nav-height: 68px;
-  --desktop-sidebar-width: 256px;
-  --shell-header-height: 56px;
-  --content-max-width: 1120px;
+  --mobile-bottom-nav-height: 70px;
+  --desktop-sidebar-width: 264px;
+  --shell-header-height: 60px;
+  --content-max-width: 1080px;
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
   --safe-area-top: env(safe-area-inset-top, 0px);
 

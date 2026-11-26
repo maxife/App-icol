@@ -5,18 +5,29 @@
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   font-weight: 700;
+  letter-spacing: 0.005em;
   line-height: 1.2;
   white-space: nowrap;
 }
 
+.badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.78;
+  flex-shrink: 0;
+}
+
 .sizeSm {
-  padding: 2px 10px;
-  font-size: var(--text-xs);
+  padding: 3px 10px;
+  font-size: 0.75rem;
 }
 
 .sizeMd {
-  padding: 4px 12px;
-  font-size: var(--text-sm);
+  padding: 5px 12px;
+  font-size: 0.8125rem;
 }
 
 .reserved {

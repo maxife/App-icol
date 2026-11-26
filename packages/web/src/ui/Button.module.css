@@ -8,25 +8,27 @@
   padding: 0 var(--space-4);
   border-radius: var(--radius-md);
   border: 1px solid transparent;
-  font-size: var(--text-base);
+  font-size: 0.9375rem;
   font-weight: 650;
+  letter-spacing: -0.01em;
   line-height: var(--leading-snug);
   text-decoration: none;
   cursor: pointer;
   user-select: none;
   transition:
-    background-color 140ms ease,
-    border-color 140ms ease,
-    box-shadow 140ms ease,
-    transform 90ms ease;
+    background 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 90ms ease,
+    filter 140ms ease;
 }
 
 .button:active:not(:disabled) {
-  transform: translateY(1px);
+  transform: translateY(1px) scale(0.99);
 }
 
 .button:disabled {
-  opacity: 0.56;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
@@ -37,18 +39,19 @@
 /* Sizes — every size strictly >= 48px touch target */
 .sizeMd {
   min-height: var(--touch-target-min);
-  padding: 0 var(--space-4);
+  padding: 0 1.125rem;
 }
 
 .sizeLg {
   min-height: var(--stepper-btn-size);
-  padding: 0 var(--space-5);
-  font-size: var(--text-lg);
+  padding: 0 var(--space-6);
+  font-size: var(--text-base);
+  font-weight: 700;
 }
 
 .sizeCompact {
   min-height: var(--touch-target-min);
-  padding: 0 var(--space-3);
+  padding: 0 0.875rem;
   font-size: var(--text-sm);
 }
 
@@ -62,31 +65,32 @@
 
 /* Variants */
 .variantPrimary {
-  background-color: var(--accent-honey);
+  background: var(--accent-honey-gradient);
   color: var(--ink-on-honey);
-  border-color: var(--accent-honey-border);
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.65),
-    var(--shadow-card);
+  border-color: rgb(180 83 9 / 0.25);
+  box-shadow: var(--shadow-honey);
+  text-shadow: 0 1px 1px rgb(120 53 15 / 0.22);
 }
 
 .variantPrimary:hover:not(:disabled) {
-  background-color: var(--accent-honey-hover);
+  background: var(--accent-honey-gradient-hover);
+  filter: brightness(1.02);
 }
 
 .variantPrimary:active:not(:disabled) {
-  background-color: var(--accent-honey-active);
+  background: var(--accent-honey-active);
 }
 
 .variantSecondary {
   background-color: var(--bg-surface);
   color: var(--ink-primary);
   border-color: var(--border-strong);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 1px 2px rgb(38 26 12 / 0.04);
 }
 
 .variantSecondary:hover:not(:disabled) {
   background-color: var(--bg-surface-subtle);
+  border-color: rgb(118 93 63 / 0.34);
 }
 
 .variantGhost {
@@ -96,30 +100,34 @@
 }
 
 .variantGhost:hover:not(:disabled) {
-  background-color: var(--bg-surface-subtle);
+  background-color: rgb(118 93 63 / 0.07);
   color: var(--ink-primary);
 }
 
 .variantDanger {
-  background-color: var(--tone-danger);
+  background: linear-gradient(180deg, #d63b32 0%, #b91c1c 100%);
   color: var(--ink-inverse);
-  border-color: var(--tone-danger-hover);
-  box-shadow: var(--shadow-card);
+  border-color: rgb(153 27 27 / 0.35);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.25),
+    0 4px 12px -2px rgb(185 28 28 / 0.28);
 }
 
 .variantDanger:hover:not(:disabled) {
-  background-color: var(--tone-danger-hover);
+  filter: brightness(1.05);
 }
 
 .variantSuccess {
-  background-color: var(--tone-success);
+  background: linear-gradient(180deg, #228b57 0%, #166f42 100%);
   color: var(--ink-inverse);
-  border-color: var(--tone-success-hover);
-  box-shadow: var(--shadow-card);
+  border-color: rgb(21 128 61 / 0.35);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.25),
+    0 4px 12px -2px rgb(21 128 61 / 0.26);
 }
 
 .variantSuccess:hover:not(:disabled) {
-  background-color: var(--tone-success-hover);
+  filter: brightness(1.05);
 }
 
 .spinner {

@@ -21,9 +21,16 @@ body {
   max-width: 100%;
   overflow-x: clip;
   background-color: var(--bg-canvas);
+  background-image: radial-gradient(
+    110% 380px at 50% 0%,
+    rgb(245 166 35 / 0.11) 0%,
+    rgb(251 248 242 / 0) 100%
+  );
+  background-repeat: no-repeat;
   color: var(--ink-primary);
   line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -33,12 +40,18 @@ h4 {
   margin: 0;
   color: var(--ink-primary);
   line-height: var(--leading-tight);
-  letter-spacing: -0.02em;
 }
 
 h1 {
+  font-family: var(--font-display);
   font-size: var(--text-2xl);
-  font-weight: 750;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2,
+h3 {
+  letter-spacing: -0.015em;
 }
 
 /* Prevent iOS Safari auto-zoom on editable form controls (must be valid >= 16px CSS) */
@@ -48,6 +61,25 @@ textarea {
   font: inherit;
   font-size: 1rem;
   color: inherit;
+}
+
+/* Refined custom chevron & smooth focus halo on native <select> elements */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23574c41' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px 16px;
+  padding-right: 40px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--focus-ring) !important;
+  box-shadow: 0 0 0 3px var(--focus-ring-halo);
 }
 
 button {
@@ -67,7 +99,7 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--focus-ring);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 

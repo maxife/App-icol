@@ -3,16 +3,21 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
-  padding: var(--space-3);
+  padding: 12px 14px;
   border-radius: var(--radius-md);
   background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 1px 2px rgb(38 26 12 / 0.03);
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease;
 }
 
 .stepperActive {
-  background-color: var(--accent-honey-soft);
+  background: linear-gradient(160deg, #fffdf9 0%, #fef4df 100%);
   border-color: var(--accent-honey-border);
+  box-shadow: 0 4px 14px -6px rgb(217 119 6 / 0.18);
 }
 
 .meta {
@@ -23,20 +28,20 @@
 }
 
 .label {
-  font-size: var(--text-base);
+  font-size: 0.96875rem;
   font-weight: 700;
   color: var(--ink-primary);
 }
 
 .sublabel {
-  font-size: var(--text-sm);
-  color: var(--ink-secondary);
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
 }
 
 .controls {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 8px;
   flex-shrink: 0;
 }
 
@@ -46,53 +51,51 @@
   min-width: var(--stepper-btn-size);
   min-height: var(--stepper-btn-size);
   padding: 0;
-  border-radius: var(--radius-md);
+  border-radius: 13px;
   border: 1px solid var(--border-strong);
-  background-color: var(--bg-surface);
+  background-color: var(--bg-surface-subtle);
   color: var(--ink-primary);
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-weight: 700;
   line-height: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: var(--shadow-card);
   transition:
-    background-color 120ms ease,
-    transform 80ms ease;
+    background 130ms ease,
+    transform 80ms ease,
+    box-shadow 130ms ease;
 }
 
 .stepBtnInc {
-  background-color: var(--accent-honey);
-  border-color: var(--accent-honey-border);
+  background: var(--accent-honey-gradient);
+  border-color: transparent;
   color: var(--ink-on-honey);
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.65),
-    var(--shadow-card);
+  box-shadow: var(--shadow-honey);
 }
 
 .stepBtnInc:hover:not(:disabled) {
-  background-color: var(--accent-honey-hover);
+  background: var(--accent-honey-gradient-hover);
 }
 
 .stepBtn:hover:not(:disabled):not(.stepBtnInc) {
-  background-color: var(--bg-surface-subtle);
+  background-color: var(--bg-surface);
 }
 
 .stepBtn:active:not(:disabled) {
-  transform: translateY(1px);
+  transform: scale(0.95);
 }
 
 .stepBtn:disabled {
-  opacity: 0.45;
+  opacity: 0.38;
   cursor: not-allowed;
 }
 
 .quantityOutput {
-  min-width: 40px;
+  min-width: 38px;
   text-align: center;
-  font-size: var(--text-xl);
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--ink-primary);
 }

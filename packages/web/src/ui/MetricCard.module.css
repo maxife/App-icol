@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: var(--space-2);
-  padding: var(--space-4);
+  gap: 6px;
+  padding: var(--space-4) var(--space-5);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
   background-color: var(--bg-surface);
@@ -17,38 +17,46 @@
   min-height: var(--touch-target-min);
   cursor: pointer;
   transition:
-    background-color 140ms ease,
-    box-shadow 140ms ease,
-    transform 90ms ease;
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 100ms ease;
 }
 
 .interactive:hover {
+  border-color: var(--border-strong);
   box-shadow: var(--shadow-elevated);
+  transform: translateY(-1px);
 }
 
 .interactive:active {
-  transform: translateY(1px);
+  transform: translateY(0);
 }
 
-/* Warm surface tints — ZERO colored left-border stripes per web-app-development */
+/* Subtle artisanal gradient washes instead of heavy flat color blocks */
 .toneHoney {
-  background-color: var(--accent-honey-soft);
+  background: linear-gradient(160deg, #fffdf8 0%, #fef4df 100%);
+  border-color: rgb(217 119 6 / 0.22);
 }
 
 .toneSuccess {
-  background-color: var(--tone-success-soft);
+  background: linear-gradient(160deg, #ffffff 0%, #eff9f3 100%);
+  border-color: rgb(29 122 76 / 0.2);
 }
 
 .toneWarning {
-  background-color: var(--status-to-transfer-bg);
+  background: linear-gradient(160deg, #fffdfa 0%, #fff2e5 100%);
+  border-color: rgb(234 88 12 / 0.24);
 }
 
 .toneDanger {
-  background-color: var(--tone-danger-soft);
+  background: linear-gradient(160deg, #fffdfd 0%, #fdf1f0 100%);
+  border-color: rgb(194 48 40 / 0.22);
 }
 
 .toneInfo {
-  background-color: var(--tone-info-soft);
+  background: linear-gradient(160deg, #ffffff 0%, #eff6fc 100%);
+  border-color: rgb(29 100 150 / 0.2);
 }
 
 .headerRow {
@@ -59,8 +67,9 @@
 }
 
 .label {
-  font-size: var(--text-sm);
-  font-weight: 650;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: var(--ink-secondary);
 }
 
@@ -68,18 +77,21 @@
   font-size: var(--text-kpi);
   font-weight: 800;
   line-height: var(--leading-tight);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.028em;
   color: var(--ink-primary);
 }
 
 .hint {
-  font-size: var(--text-sm);
-  color: var(--ink-secondary);
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
 }
 
 .actionRow {
   margin-top: var(--space-1);
-  font-size: var(--text-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8125rem;
   font-weight: 700;
   color: var(--accent-honey-ink);
 }

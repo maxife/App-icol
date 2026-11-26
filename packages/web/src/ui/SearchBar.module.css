@@ -17,14 +17,26 @@
 .input {
   width: 100%;
   min-height: var(--touch-target-min);
-  padding: 0 52px 0 42px;
-  border-radius: var(--radius-md);
+  padding: 0 48px 0 42px;
+  border-radius: var(--radius-pill);
   border: 1px solid var(--border-input);
-  background-color: var(--bg-surface);
+  background-color: var(--bg-surface-subtle);
   color: var(--ink-primary);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
-  box-shadow: var(--shadow-card);
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.input:hover:not(:disabled) {
+  background-color: var(--bg-surface);
+  border-color: var(--border-strong);
+}
+
+.input:focus {
+  background-color: var(--bg-surface);
 }
 
 .input::placeholder {
@@ -45,7 +57,7 @@
   min-height: var(--touch-target-min);
   padding: 0;
   border: 0;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
   background-color: transparent;
   color: var(--ink-secondary);
   display: inline-flex;
@@ -57,6 +69,6 @@
 }
 
 .clearBtn:hover {
-  background-color: var(--bg-surface-subtle);
+  background-color: rgb(118 93 63 / 0.08);
   color: var(--ink-primary);
 }
