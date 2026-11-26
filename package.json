@@ -1,0 +1,38 @@
+{
+  "name": "app-icol",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/shared",
+    "packages/gas-api",
+    "packages/web"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "typecheck": "node scripts/with-scratch-tmp.mjs npx tsc -b",
+    "test": "node scripts/with-scratch-tmp.mjs npx vitest run",
+    "build": "node scripts/with-scratch-tmp.mjs npm run build:workspaces",
+    "build:workspaces": "tsc -b packages/shared && npm run build --workspace @app-icol/gas-api && npm run build --workspace @app-icol/web",
+    "test:e2e": "node scripts/run-e2e.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^8.0.0",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.13",
+    "@types/google-apps-script": "^2.0.16",
+    "@types/node": "^22.20.5",
+    "@vitejs/plugin-react": "^6.3.0",
+    "esbuild": "^0.28.2",
+    "jsdom": "^31.0.1",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.8",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.1.1",
+    "workbox-window": "^7.4.1"
+  }
+}

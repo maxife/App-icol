@@ -1,0 +1,475 @@
+.pageSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+  min-width: 0;
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.headerTopRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+}
+
+.draftRestoredBanner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--accent-honey-soft);
+  border: 1px solid var(--accent-honey-border);
+  color: var(--accent-honey-ink);
+  font-size: var(--text-xs);
+  font-weight: 650;
+}
+
+.draftDiscardBtn {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent-honey-border);
+  background-color: var(--bg-surface);
+  color: var(--accent-honey-ink);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.draftDiscardBtn:hover {
+  background-color: var(--bg-surface-elevated);
+}
+
+.formStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  min-width: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+  min-width: 0;
+}
+
+.sectionTitleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.sectionTitle {
+  font-size: var(--text-lg);
+  font-weight: 750;
+  color: var(--ink-primary);
+}
+
+.sectionHint {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.dateHarvestGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+  width: 100%;
+  min-width: 0;
+}
+
+@media (min-width: 560px) {
+  .dateHarvestGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  }
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 650;
+  color: var(--ink-secondary);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: var(--touch-target-min);
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-input);
+  background-color: var(--bg-surface);
+  color: var(--ink-primary);
+  font-size: var(--text-base);
+}
+
+.textarea {
+  min-height: 84px;
+  padding: var(--space-3);
+  resize: vertical;
+  line-height: var(--leading-snug);
+}
+
+.inputError {
+  border-color: var(--tone-danger);
+}
+
+.fieldError {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 650;
+  color: var(--tone-danger);
+}
+
+/* Sticky totals + steppers scope (strictly contained so totals never overlap external controls) */
+.jarsStickyScope {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.totalsBanner {
+  position: sticky;
+  top: calc(var(--safe-area-top) + 158px);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface-elevated);
+  border: 2px solid var(--accent-honey-border);
+  box-shadow: var(--shadow-elevated);
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .totalsBanner {
+    top: calc(var(--safe-area-top) + 108px);
+  }
+}
+
+.totalsBannerDonated {
+  background-color: var(--status-donated-bg);
+  border-color: var(--status-donated-border);
+}
+
+.totalsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  align-items: start;
+  min-width: 0;
+}
+
+.totalCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.totalCellRight {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.totalLabel {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ink-secondary);
+}
+
+.totalValue {
+  font-size: var(--text-kpi);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  color: var(--ink-primary);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: var(--font-numeric-feature);
+}
+
+.totalValueDonated {
+  color: var(--status-donated-fg);
+}
+
+.totalMeta {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.donatedCalloutRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1);
+  padding-top: var(--space-1);
+  border-top: 1px solid rgb(2 132 199 / 0.28);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--status-donated-fg);
+}
+
+.steppersList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+/* Manual Price Override */
+.manualPriceZone {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--border-subtle);
+  min-width: 0;
+}
+
+.toggleSwitchBtn {
+  width: 100%;
+  min-height: var(--touch-target-min);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-surface-subtle);
+  color: var(--ink-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  text-align: left;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.toggleSwitchBtn:hover:not(:disabled) {
+  background-color: var(--bg-surface-elevated);
+}
+
+.toggleSwitchBtnActive {
+  background-color: var(--accent-honey-soft);
+  border-color: var(--accent-honey-border);
+  color: var(--accent-honey-ink);
+}
+
+.toggleSwitchBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.switchPill {
+  flex-shrink: 0;
+  min-width: 52px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  color: var(--ink-secondary);
+  font-size: var(--text-xs);
+  font-weight: 750;
+  text-align: center;
+}
+
+.switchPillActive {
+  background-color: var(--accent-honey);
+  border-color: var(--accent-honey-border);
+  color: var(--ink-on-honey);
+}
+
+.manualPriceEditor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  min-width: 0;
+}
+
+.manualPriceRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+@media (min-width: 520px) {
+  .manualPriceRow {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.manualPriceInputWrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Third-party transfer block */
+.transferDetailsBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--status-to-transfer-bg);
+  border: 1px solid var(--status-to-transfer-border);
+  min-width: 0;
+}
+
+.transferNormalizedHint {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--ink-muted);
+}
+
+/* Submission & Error Alerts */
+.errorAlert {
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--tone-danger-soft);
+  border: 1px solid var(--status-unpaid-border);
+  color: var(--status-unpaid-fg);
+  font-size: var(--text-sm);
+  font-weight: 650;
+}
+
+.submitActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+  min-width: 0;
+}
+
+/* Manager-only Delete Danger Zone */
+.dangerZone {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--status-unpaid-border);
+  background-color: var(--bg-surface);
+  min-width: 0;
+}
+
+.dangerZoneTitle {
+  font-size: var(--text-base);
+  font-weight: 750;
+  color: var(--tone-danger);
+}
+
+.dangerZoneText {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+}
+
+.confirmDeleteBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--tone-danger-soft);
+  border: 1px solid var(--status-unpaid-border);
+  min-width: 0;
+}
+
+.confirmDeletePrompt {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--status-unpaid-fg);
+}
+
+.confirmDeleteActions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .confirmDeleteActions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.emptyStateCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.emptyStateTitle {
+  font-size: var(--text-lg);
+  font-weight: 750;
+  color: var(--ink-primary);
+}
+
+.emptyStateText {
+  margin: 0;
+  font-size: var(--text-base);
+  color: var(--ink-secondary);
+}

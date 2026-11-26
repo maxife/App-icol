@@ -1,0 +1,68 @@
+# =============================================================================
+# 1. Linux $HOME & Agent Orchestration Directories (NEVER TRACK)
+# =============================================================================
+/.agents/
+/.gemini/
+/.android/
+/.gradle/
+/.cache/
+/.npm/
+/.config/
+/.local/
+/.dotnet/
+/.cargo/
+/.rustup/
+/.pyenv/
+/.nvm/
+/.bun/
+/.yarn/
+/.ssh/
+/.gnupg/
+/.pki/
+
+# Linux $HOME shell & CLI dotfiles
+/.bashrc
+/.bash_logout
+/.bash_history
+/.profile
+/.zsh_history
+/.viminfo
+/.lesshst
+/.wget-hsts
+/.python_history
+/.node_repl_history
+/.gitconfig
+/.git-credentials
+/.npmrc
+/.yarnrc
+
+# =============================================================================
+# 2. Google Apps Script / Clasp Secrets (keep .clasp.json.example tracked!)
+# =============================================================================
+.clasprc.json
+.clasp.json
+!.clasp.json.example
+
+# =============================================================================
+# 3. Node, TypeScript, Vite, Vitest & Playwright Build/Test Outputs
+# =============================================================================
+node_modules/
+dist/
+build/
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.vite/
+.vitest-cache/
+*.tsbuildinfo
+*.log
+npm-debug.log*
+
+# =============================================================================
+# 4. Environment Files (keep .env.example tracked if added)
+# =============================================================================
+.env
+.env.*
+!.env.example

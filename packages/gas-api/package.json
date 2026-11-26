@@ -1,0 +1,13 @@
+{
+  "name": "@app-icol/gas-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@app-icol/shared": "0.1.0"
+  },
+  "scripts": {
+    "build": "node scripts/build-gas.mjs",
+    "typecheck": "tsc -b"
+  }
+}

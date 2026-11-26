@@ -1,0 +1,91 @@
+.viewport {
+  position: fixed;
+  inset-inline: var(--space-3);
+  bottom: calc(var(--mobile-bottom-nav-height) + var(--safe-area-bottom) + var(--space-3));
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  pointer-events: none;
+  max-width: 460px;
+  margin-inline: auto;
+}
+
+@media (min-width: 900px) {
+  .viewport {
+    inset-inline: auto var(--space-6);
+    bottom: var(--space-6);
+    width: 380px;
+    margin-inline: 0;
+  }
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface-elevated);
+  color: var(--ink-primary);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* Soft semantic surfaces — ZERO colored left-border stripes */
+.variantSuccess {
+  background-color: var(--tone-success-soft);
+  color: var(--status-paid-fg);
+}
+
+.variantError {
+  background-color: var(--tone-danger-soft);
+  color: var(--status-unpaid-fg);
+}
+
+.variantInfo {
+  background-color: var(--tone-info-soft);
+  color: var(--status-donated-fg);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--text-sm);
+  font-weight: 750;
+}
+
+.description {
+  font-size: var(--text-xs);
+  opacity: 0.92;
+}
+
+.dismissBtn {
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.dismissBtn:hover {
+  background-color: rgb(28 25 23 / 0.08);
+}

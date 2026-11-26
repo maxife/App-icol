@@ -1,0 +1,85 @@
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface);
+  color: var(--ink-primary);
+  box-shadow: var(--shadow-card);
+  text-align: left;
+}
+
+.interactive {
+  min-height: var(--touch-target-min);
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    box-shadow 140ms ease,
+    transform 90ms ease;
+}
+
+.interactive:hover {
+  box-shadow: var(--shadow-elevated);
+}
+
+.interactive:active {
+  transform: translateY(1px);
+}
+
+/* Warm surface tints — ZERO colored left-border stripes per web-app-development */
+.toneHoney {
+  background-color: var(--accent-honey-soft);
+}
+
+.toneSuccess {
+  background-color: var(--tone-success-soft);
+}
+
+.toneWarning {
+  background-color: var(--status-to-transfer-bg);
+}
+
+.toneDanger {
+  background-color: var(--tone-danger-soft);
+}
+
+.toneInfo {
+  background-color: var(--tone-info-soft);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 650;
+  color: var(--ink-secondary);
+}
+
+.value {
+  font-size: var(--text-kpi);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  color: var(--ink-primary);
+}
+
+.hint {
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+}
+
+.actionRow {
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--accent-honey-ink);
+}

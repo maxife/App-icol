@@ -1,0 +1,98 @@
+.stepperRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+}
+
+.stepperActive {
+  background-color: var(--accent-honey-soft);
+  border-color: var(--accent-honey-border);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.sublabel {
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+}
+
+.controls {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.stepBtn {
+  width: var(--stepper-btn-size);
+  height: var(--stepper-btn-size);
+  min-width: var(--stepper-btn-size);
+  min-height: var(--stepper-btn-size);
+  padding: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-surface);
+  color: var(--ink-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition:
+    background-color 120ms ease,
+    transform 80ms ease;
+}
+
+.stepBtnInc {
+  background-color: var(--accent-honey);
+  border-color: var(--accent-honey-border);
+  color: var(--ink-on-honey);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.65),
+    var(--shadow-card);
+}
+
+.stepBtnInc:hover:not(:disabled) {
+  background-color: var(--accent-honey-hover);
+}
+
+.stepBtn:hover:not(:disabled):not(.stepBtnInc) {
+  background-color: var(--bg-surface-subtle);
+}
+
+.stepBtn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.stepBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.quantityOutput {
+  min-width: 40px;
+  text-align: center;
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--ink-primary);
+}

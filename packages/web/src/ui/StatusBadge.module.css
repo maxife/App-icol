@@ -1,0 +1,68 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.sizeSm {
+  padding: 2px 10px;
+  font-size: var(--text-xs);
+}
+
+.sizeMd {
+  padding: 4px 12px;
+  font-size: var(--text-sm);
+}
+
+.reserved {
+  background-color: var(--status-reserved-bg);
+  color: var(--status-reserved-fg);
+  border-color: var(--status-reserved-border);
+}
+
+.distributed {
+  background-color: var(--status-distributed-bg);
+  color: var(--status-distributed-fg);
+  border-color: var(--status-distributed-border);
+}
+
+.unpaid {
+  background-color: var(--status-unpaid-bg);
+  color: var(--status-unpaid-fg);
+  border-color: var(--status-unpaid-border);
+}
+
+.paid {
+  background-color: var(--status-paid-bg);
+  color: var(--status-paid-fg);
+  border-color: var(--status-paid-border);
+}
+
+.donated {
+  background-color: var(--status-donated-bg);
+  color: var(--status-donated-fg);
+  border-color: var(--status-donated-border);
+}
+
+.toTransfer {
+  background-color: var(--status-to-transfer-bg);
+  color: var(--status-to-transfer-fg);
+  border-color: var(--status-to-transfer-border);
+}
+
+.transferred {
+  background-color: var(--status-transferred-bg);
+  color: var(--status-transferred-fg);
+  border-color: var(--status-transferred-border);
+}
+
+.neutral {
+  background-color: var(--status-neutral-bg);
+  color: var(--status-neutral-fg);
+  border-color: var(--status-neutral-border);
+}

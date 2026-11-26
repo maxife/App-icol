@@ -1,0 +1,134 @@
+:root {
+  /* === Palette: Ambre Solaire & Ardoise Chaude === */
+  --bg-canvas: #faf6ee;
+  --bg-surface: #ffffff;
+  --bg-surface-subtle: #f3ede0;
+  --bg-surface-elevated: #fffdf9;
+  --bg-scrim: rgb(28 25 23 / 0.52);
+
+  --ink-primary: #1c1917;
+  --ink-secondary: #44403c;
+  --ink-muted: #57534e;
+  --ink-inverse: #fafaf9;
+
+  --border-subtle: #d6cfc2;
+  --border-strong: #a8a096;
+  --border-input: #78716c;
+  --focus-ring: #b45309;
+  --focus-ring-offset: #faf6ee;
+
+  /* Solar Honey Primary Accent (High-contrast dark slate ink on warm amber) */
+  --accent-honey: #f59e0b;
+  --accent-honey-hover: #fbbf24;
+  --accent-honey-active: #d97706;
+  --accent-honey-soft: #fef3c7;
+  --accent-honey-border: #d97706;
+  --accent-honey-ink: #92400e;
+  --ink-on-honey: #1c1917;
+
+  /* Feedback & Action Tones */
+  --tone-danger: #b91c1c;
+  --tone-danger-hover: #991b1b;
+  --tone-danger-soft: #fee2e2;
+  --tone-success: #15803d;
+  --tone-success-hover: #166534;
+  --tone-success-soft: #dcfce7;
+  --tone-info: #0369a1;
+  --tone-info-soft: #e0f2fe;
+
+  /* === 7 Semantic Domain Statuses === */
+  /* OrderStatus: Réservé */
+  --status-reserved-bg: #fef3c7;
+  --status-reserved-fg: #92400e;
+  --status-reserved-border: #d97706;
+
+  /* OrderStatus: Distribué */
+  --status-distributed-bg: #dcfce7;
+  --status-distributed-fg: #166534;
+  --status-distributed-border: #16a34a;
+
+  /* PaymentStatus: Non-payé */
+  --status-unpaid-bg: #fee2e2;
+  --status-unpaid-fg: #991b1b;
+  --status-unpaid-border: #dc2626;
+
+  /* PaymentStatus: Payé */
+  --status-paid-bg: #d1fae5;
+  --status-paid-fg: #065f46;
+  --status-paid-border: #059669;
+
+  /* PaymentStatus: Donné (0 € hors CA) */
+  --status-donated-bg: #e0f2fe;
+  --status-donated-fg: #075985;
+  --status-donated-border: #0284c7;
+
+  /* TransferStatus: À reverser */
+  --status-to-transfer-bg: #ffedd5;
+  --status-to-transfer-fg: #9a3412;
+  --status-to-transfer-border: #ea580c;
+
+  /* TransferStatus: Reversé */
+  --status-transferred-bg: #e7e5e4;
+  --status-transferred-fg: #292524;
+  --status-transferred-border: #78716c;
+
+  /* Neutral / Forecast Badge */
+  --status-neutral-bg: #f3ede0;
+  --status-neutral-fg: #44403c;
+  --status-neutral-border: #a8a096;
+
+  /* === Typography & Tabular Numerals === */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  --font-numeric-feature: 'tnum' 1, 'lnum' 1;
+
+  --text-xs: 0.8125rem; /* 13px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px — mandatory min on inputs to avoid iOS zoom */
+  --text-lg: clamp(1.0625rem, 0.98rem + 0.35vw, 1.2rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);
+  --text-kpi: clamp(1.45rem, 1.25rem + 1vw, 2rem);
+
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+
+  /* === Tactile Touch Targets & Spacing === */
+  --touch-target-min: 48px;
+  --stepper-btn-size: 52px;
+
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+
+  /* === Radii & Tactile Elevation === */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 1px 2px rgb(28 25 23 / 0.06), 0 2px 6px rgb(28 25 23 / 0.04);
+  --shadow-elevated: 0 4px 14px rgb(28 25 23 / 0.12), 0 1px 3px rgb(28 25 23 / 0.08);
+  --shadow-bottom-bar: 0 -2px 12px rgb(28 25 23 / 0.08);
+
+  /* === Responsive Shell Layout Variables === */
+  --mobile-bottom-nav-height: 68px;
+  --desktop-sidebar-width: 256px;
+  --shell-header-height: 56px;
+  --content-max-width: 1120px;
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-top: env(safe-area-inset-top, 0px);
+
+  /* === Z-Index Scale === */
+  --z-sticky: 20;
+  --z-nav: 40;
+  --z-banner: 50;
+  --z-dropdown: 60;
+  --z-modal: 80;
+  --z-toast: 100;
+}
